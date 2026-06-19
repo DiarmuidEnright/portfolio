@@ -1,7 +1,7 @@
 ABOUT = {
     "name": "Diarmuid Enright",
     "tagline": "Data Science student & SDE Intern @ AWS",
-    "photo": "logo.jpg",
+    "photo": "profile.png",
     "bio": (
         "My name is Diarmuid and I am a Data Science student studying in Cork, "
         "Ireland. Right now I am working in AWS as part of the CloudWatch metrics "
@@ -46,7 +46,7 @@ HOBBIES = [
             "I was super antisocial when I was a kid and just going to weekly chess "
             "helped me meet new people."
         ),
-        "image": "logo.jpg",
+        "image": "chess.png",
     },
     {
         "name": "Cello",
@@ -55,7 +55,7 @@ HOBBIES = [
             "with the national youth orchestra for a few years, but now it's something I "
             "can do on the side to de-stress from college or work."
         ),
-        "image": "logo.jpg",
+        "image": "cello.png",
     },
 ]
 
