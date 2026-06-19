@@ -49,6 +49,37 @@ body {
     padding-right: 0px;
 }
 
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.tagline {
+    color: #dce6f5;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
 .profile {
     background-color: #1d539f !important;
     text-align: center;
