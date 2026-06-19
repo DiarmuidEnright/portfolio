@@ -28,8 +28,6 @@
                     <img src="{{ url_for('static', filename='img/logo.svg') }}" />
                 </div>
             </a>
-            <!-- Dynamic menu: loops over every page registered in __init__.py,
-                 so adding a new page automatically adds a menu link. -->
             <nav class="nav-menu">
                 {% for page in pages %}
                 <a class="nav-link {% if page.endpoint == request.endpoint %}active{% endif %}"

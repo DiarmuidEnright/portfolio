@@ -1,8 +1,6 @@
 ABOUT = {
     "name": "Diarmuid Enright",
-    "tagline": "Data Science student & SDE Intern @ AWS",  # change this if you'd prefer something else
-    # Drop your photo in app/static/img/ and point to it here.
-    # TODO: replace 'logo.jpg' with your own photo file name.
+    "tagline": "Data Science student & SDE Intern @ AWS",
     "photo": "logo.jpg",
     "bio": (
         "My name is Diarmuid and I am a Data Science student studying in Cork, "
@@ -36,13 +34,11 @@ EDUCATION = [
     {
         "qualification": "BSc Data Science and Artificial Intelligence",
         "institution": "University College Cork",
-        "period": "2023 – 2027",  # CONFIRM: I used your example dates — fix if wrong
+        "period": "2023 – 2027",
         "description": "Head SysAdmin or SysAdmin of literally every tech society on campus.",
     },
 ]
 
-# Each hobby can have an image. Put images in app/static/img/ and reference the
-# file name in "image". TODO: replace the logo.jpg images with real photos.
 HOBBIES = [
     {
         "name": "Chess",
@@ -50,7 +46,7 @@ HOBBIES = [
             "I was super antisocial when I was a kid and just going to weekly chess "
             "helped me meet new people."
         ),
-        "image": "logo.jpg",  # TODO: replace with your own image file name
+        "image": "logo.jpg",
     },
     {
         "name": "Cello",
@@ -59,12 +55,10 @@ HOBBIES = [
             "with the national youth orchestra for a few years, but now it's something I "
             "can do on the side to de-stress from college or work."
         ),
-        "image": "logo.jpg",  # TODO: replace with your own image file name
+        "image": "logo.jpg",
     },
 ]
 
-# Used to drop pins on the map. Find coordinates by right-clicking a spot in
-# Google Maps. Add more entries to drop more pins.
 LOCATIONS = [
     {"name": "Copenhagen, Denmark", "lat": 55.6761, "lng": 12.5683},
 ]
