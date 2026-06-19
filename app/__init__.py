@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 PAGES = [
     {"endpoint": "index", "label": "Home"},
+    {"endpoint": "hobbies", "label": "Hobbies"},
 ]
 
 
@@ -29,3 +30,8 @@ def index():
         experiences=data.EXPERIENCES,
         education=data.EDUCATION,
     )
+
+
+@app.route('/hobbies')
+def hobbies():
+    return render_template('hobbies.html', title="Hobbies", hobbies=data.HOBBIES)
