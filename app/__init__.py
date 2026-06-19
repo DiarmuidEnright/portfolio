@@ -23,4 +23,9 @@ def inject_globals():
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow")
+    return render_template(
+        'index.html',
+        title="MLH Fellow",
+        experiences=data.EXPERIENCES,
+        education=data.EDUCATION,
+    )
