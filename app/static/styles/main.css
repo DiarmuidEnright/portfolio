@@ -75,15 +75,16 @@ body {
 }
 
 .tagline {
-    color: #dce6f5;
+    color: #ffffff;
     font-size: 20px;
-    margin-top: -10px;
+    font-weight: 400;
+    margin-top: -8px;
 }
 
 .profile {
     background-color: #1d539f !important;
     text-align: center;
-    height: 320px;
+    padding: 10px 0 45px 0;
     margin-bottom: 50px;
 }
 
