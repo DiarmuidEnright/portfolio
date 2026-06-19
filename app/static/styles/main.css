@@ -170,8 +170,10 @@ body {
 
 .hobby-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, 260px);
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
 }
 
 .hobby-card {
