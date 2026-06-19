@@ -109,6 +109,25 @@ body {
     height: 200px;
 }
 
+.section {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+}
+
+.section h2 {
+    color: #1d539f;
+    font-size: 32px;
+    border-bottom: 2px solid #1d539f;
+    padding-bottom: 8px;
+}
+
+.section .bio {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
 .banner {
     padding: 20px 0px 50px 0px;
     height: 150px;
