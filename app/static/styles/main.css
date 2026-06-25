@@ -202,6 +202,13 @@ body {
     line-height: 1.5;
 }
 
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
 .banner {
     padding: 20px 0px 50px 0px;
     height: 150px;

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="banner">
+    <div class="title" style="text-align:center;">Places I've Visited</div>
+</div>
+
+<section class="section">
+    <div id="map"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const locations = {{ locations | tojson }};
+
+    const map = L.map('map');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const markers = locations.map(function (place) {
+        return L.marker([place.lat, place.lng])
+            .addTo(map)
+            .bindTooltip(place.name, { direction: 'top', offset: [0, -8] })
+            .bindPopup(place.name);
+    });
+
+    if (markers.length === 1) {
+        map.setView([locations[0].lat, locations[0].lng], 5);
+    } else if (markers.length > 1) {
+        map.fitBounds(L.featureGroup(markers).getBounds().pad(0.3));
+    } else {
+        map.setView([20, 0], 2);
+    }
+</script>
+{% endblock %}
