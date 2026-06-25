@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_macros.html" import timeline_card %}
 
 {% block content %}
 <div class="profile">
@@ -9,4 +10,22 @@
     <p class="tagline">{{ about.tagline }}</p>
 </div>
 
+<section class="section" id="about">
+    <h2>About Me</h2>
+    <p class="bio">{{ about.bio }}</p>
+</section>
+
+<section class="section" id="experience">
+    <h2>Experience</h2>
+    {% for job in experiences %}
+        {{ timeline_card(job.role, job.company, job.period, job.description) }}
+    {% endfor %}
+</section>
+
+<section class="section" id="education">
+    <h2>Education</h2>
+    {% for edu in education %}
+        {{ timeline_card(edu.qualification, edu.institution, edu.period, edu.description) }}
+    {% endfor %}
+</section>
 {% endblock %}

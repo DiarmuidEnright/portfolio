@@ -9,6 +9,8 @@ app = Flask(__name__)
 
 PAGES = [
     {"endpoint": "index", "label": "Home"},
+    {"endpoint": "hobbies", "label": "Hobbies"},
+    {"endpoint": "map", "label": "Map"},
 ]
 
 
@@ -23,4 +25,19 @@ def inject_globals():
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow")
+    return render_template(
+        'index.html',
+        title="MLH Fellow",
+        experiences=data.EXPERIENCES,
+        education=data.EDUCATION,
+    )
+
+
+@app.route('/hobbies')
+def hobbies():
+    return render_template('hobbies.html', title="Hobbies", hobbies=data.HOBBIES)
+
+
+@app.route('/map')
+def map():
+    return render_template('map.html', title="Map", locations=data.LOCATIONS)
