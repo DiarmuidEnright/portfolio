@@ -168,6 +168,40 @@ body {
     color: #333;
 }
 
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 260px);
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.hobby-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 16px;
+}
+
+.hobby-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.hobby-card h3 {
+    color: #1d539f;
+    margin: 12px 0 6px 0;
+}
+
+.hobby-card p {
+    margin: 0 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
 .banner {
     padding: 20px 0px 50px 0px;
     height: 150px;
