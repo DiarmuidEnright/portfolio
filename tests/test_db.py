@@ -1,0 +1,55 @@
+# test_db.py from mlh task 1
+
+import unittest
+from peewee import *
+from app import TimelinePost
+
+import os
+os.environ['TESTING'] = 'true'
+
+MODELS = [TimelinePost]
+
+# use an in-memory SQLite for tests
+test_db = SqliteDatabase(':memory:')
+
+class TestTimelinePost(unittest.TestCase):
+    def setUp(self):
+        # bind model classes to test db. since we have a complete list of
+        # all models, we do not need to recursively bind dependencies.
+        test_db.bind(MODELS, bind_refs=False, bind_backrefs=False)
+
+        test_db.connect()
+        test_db.create_tables(MODELS)
+
+    def tearDown(self):
+        # not strictly necessary since SQLite in-memory databases only live
+        # for the duration of the connection, and in the next step we close
+        # the connection...but a good practice all the same.
+        test_db.drop_tables(MODELS)
+
+        # close connection to db.
+        test_db.close()
+
+    @classmethod
+    def tearDownClass(cls):
+        from app import mydb
+        if not mydb.is_closed():
+            mydb.close()
+
+    def test_timeline_post(self):
+        # create 2 timeline posts.
+        first_post = TimelinePost.create(name='John Doe', email='john@example.com', content='Hello world, I\'m John!')
+        assert first_post.id == 1
+        second_post = TimelinePost.create(name='Jane Doe', email='jane@example.com', content='Hello world, I\'m Jane!')
+        assert second_post.id == 2
+        # TO DO: get timeline posts and assert that they are correct
+        timeline_posts = TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        assert timeline_posts.count() == 2
+        assert timeline_posts[0].id == 2
+        assert timeline_posts[0].name == 'Jane Doe'
+        assert timeline_posts[0].email == 'jane@example.com'
+        assert timeline_posts[0].content == 'Hello world, I\'m Jane!'
+        assert timeline_posts[1].id == 1
+        assert timeline_posts[1].name == 'John Doe'
+        assert timeline_posts[1].email == 'john@example.com'
+        assert timeline_posts[1].content == 'Hello world, I\'m John!'
